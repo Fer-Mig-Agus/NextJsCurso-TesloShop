@@ -1,6 +1,19 @@
-import React from 'react'
+import { notFound } from "next/navigation";
 
-const Category = () => {
+
+
+interface Props{
+  params:{
+    id:string;
+  }
+}
+
+const Category = ({params}:Props) => {
+
+  if (params.id === 'kids') {
+    notFound();
+  }
+
   return (
     <div>
       <h1>Category page</h1>
