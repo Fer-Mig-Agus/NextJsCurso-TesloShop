@@ -1,11 +1,16 @@
 import { titleFont } from "@/config/fonts";
 import Image from "next/image";
+import { Title } from '@/components';
 
 export default function Home() {
   return (
     <div>
 
-
+      <Title 
+      title='Store'
+      subtitle="All products"
+      className="mb-2"
+      />
     </div>
   );
 }
