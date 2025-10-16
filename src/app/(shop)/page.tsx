@@ -1,6 +1,8 @@
-import { titleFont } from "@/config/fonts";
-import Image from "next/image";
-import { Title } from '@/components';
+import { Title,ProductGrid } from '@/components';
+import { initialData } from "@/seed/seed";
+
+
+const products = initialData.products
 
 export default function Home() {
   return (
@@ -11,17 +13,11 @@ export default function Home() {
       subtitle="All products"
       className="mb-2"
       />
+
+
+        <ProductGrid products={products} />
+
     </div>
   );
 }
 
-
-/**
- * 
- *  boton de request scraper: dominios, listado de scraper 
- *  detalle del scraper: scraperapi
- * over view: los graficos
- *            los creditos? como mostrarlos?
- * 
- * 
- */ 
