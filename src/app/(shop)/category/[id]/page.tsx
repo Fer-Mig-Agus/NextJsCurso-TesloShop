@@ -1,24 +1,18 @@
 "use client";
 import { ProductGrid, Title } from "@/components";
+import { Category } from "@/interfaces/product.interface";
 import { initialData } from "@/seed/seed";
 import Image from "next/image";
 import { notFound, usePathname } from "next/navigation";
 
-// interface Props {
-//   params: {
-//     id: string;
-//   };
-// }
-
 
 interface Props {
   params: {
-    id: 'men' | 'women' | 'kid';
+    id: Category;
   };
 }
 
-
-const Category = ({ params }: Props) => {
+const CategoryPage = ({ params }: Props) => {
 
   // if (params.id) {
   //   notFound();
@@ -32,10 +26,11 @@ const Category = ({ params }: Props) => {
 
   const data = initialData.products.filter((item) => item.gender === id);
 
-  const labels = {
+  const labels:Record<Category, string> = {
     'men':'Men',
     'women':'Women',
-    'kid':'Kids'
+    'kid':'Kids',
+    'unisex':'All'
   }
 
   
@@ -53,4 +48,4 @@ const Category = ({ params }: Props) => {
   );
 };
 
-export default Category;
+export default CategoryPage;
