@@ -62,7 +62,7 @@ const Cart = () => {
               <span className="text-right">3 Items</span>
               <span>Subtotal</span>
               <span className="text-right">$ 100</span>
-              <span>Impuestos</span>
+              <span>Taxes</span>
               <span className="text-right">$ 100</span>
               <span className="mt-5 text-2xl">Total:</span>
               <span className="mt-5 text-2xl text-right">3 Items</span>
