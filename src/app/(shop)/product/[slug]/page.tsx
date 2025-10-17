@@ -1,4 +1,4 @@
-import { QuantitySelector, SizeSelector } from "@/components";
+import { ProductSlideshow, QuantitySelector, SizeSelector } from "@/components";
 import { titleFont } from "@/config/fonts";
 import { initialData } from "@/seed/seed";
 import { notFound } from "next/navigation";
@@ -23,7 +23,7 @@ const Product = ({ params }: Props) => {
       {/* Slideshow  */}
 
       <div className="col-span-1 md:col-span-2">
-        <h1>hola</h1>
+        <ProductSlideshow images={product.images} title={product.title} />
       </div>
 
       {/* Details  */}
