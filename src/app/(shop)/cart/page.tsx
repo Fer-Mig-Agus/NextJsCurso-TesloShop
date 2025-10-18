@@ -15,8 +15,8 @@ const Cart = () => {
 
   if (!productsInCart.length) {
     redirect('/empty')
-
   }
+
 
   return (
     <div className="flex justify-center items-center mb-72 px-10 sm:px-0">
