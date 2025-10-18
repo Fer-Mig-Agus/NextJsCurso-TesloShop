@@ -6,9 +6,9 @@ import Image from "next/image";
 import { redirect } from "next/navigation";
 
 const productsInCart:any[] = [
-  // initialData.products[0],
-  // initialData.products[1],
-  // initialData.products[2],
+  initialData.products[0],
+  initialData.products[1],
+  initialData.products[2],
 ];
 
 const Cart = () => {
@@ -61,7 +61,7 @@ const Cart = () => {
 
           {/* checkout  */}
 
-          <div className="bg-white rounded-xl shadow-xl p-7">
+          <div className="bg-white rounded-xl shadow-xl p-7 h-[300px]">
             <h2 className="text-2xl mb-2">Summary</h2>
             <div className="grid grid-cols-2">
 
