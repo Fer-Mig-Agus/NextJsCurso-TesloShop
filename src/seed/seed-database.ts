@@ -10,7 +10,7 @@ const GENDER_ENUM = new Set(["men", "women", "kid", "unisex"]);
 
 function validateAndCoerceProduct(raw: any) {
     const {
-        title, description, inStock, price, slug, gender, size, tags
+        title, description, inStock, price, slug, gender, sizes, tags
     } = raw;
 
     // Campos requeridos
@@ -35,7 +35,7 @@ function validateAndCoerceProduct(raw: any) {
     }
 
     // Enum[] size
-    const _size: string[] = Array.isArray(size) ? size.map(upper) : [];
+    const _size: string[] = Array.isArray(sizes) ? sizes.map(upper) : [];
     for (const s of _size) {
         if (!SIZE_ENUM.has(s)) {
             throw new Error(`size inválido: "${s}". Permitidos: ${[...SIZE_ENUM].join(", ")}`);
@@ -54,7 +54,7 @@ function validateAndCoerceProduct(raw: any) {
         price: _price,
         slug: norm(slug),
         gender: _gender as "men" | "women" | "kid" | "unisex",
-        size: _size as ("XS" | "S" | "M" | "L" | "XL" | "XXL" | "XXXL")[],
+        sizes: _size as ("XS" | "S" | "M" | "L" | "XL" | "XXL" | "XXXL")[],
         tags: _tags,
     };
 }
