@@ -4,16 +4,20 @@ import { Title, ProductGrid, Pagination } from '@/components';
 import { redirect } from 'next/navigation';
 
 
+interface SearchParamsShape {
+  page?: string;
+}
+
 interface Props {
-  searchParams: {
-    page?: string;
-  }
+ searchParams: Promise<SearchParamsShape>;
 }
 
 
 export default async function Home({ searchParams }: Props) {
 
-  const page = searchParams.page ? parseInt(searchParams.page) : 1;
+  const searchParamsValue=await searchParams;
+
+  const page = searchParamsValue.page ? parseInt(searchParamsValue.page) : 1;
 
   const { products, currentPage, totalPages } = await getPaginatedProductsWithImages({page});
 

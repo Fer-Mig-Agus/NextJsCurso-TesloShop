@@ -8,14 +8,19 @@ import { titleFont } from "@/config/fonts";
 import { initialData } from "@/seed/seed";
 import { notFound } from "next/navigation";
 
-interface Props {
-  params: {
-    slug: string;
-  };
+
+interface RouteParams {
+  slug: string;
 }
 
-const Product = ({ params }: Props) => {
-  const { slug } = params;
+
+
+interface Props {
+  params: Promise<RouteParams>;
+}
+
+const Product = async ({ params }: Props) => {
+  const { slug } = await params;
 
   const product = initialData.products.find((product) => product.slug === slug);
 
